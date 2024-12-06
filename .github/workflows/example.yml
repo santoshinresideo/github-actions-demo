@@ -1,4 +1,4 @@
-name: Matrix Build Example
+name: First GitHub Action with Variables
 
 on:
   push:
@@ -6,14 +6,16 @@ on:
       - main
 
 jobs:
-  test-on-matrix:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+  say-hello:
+    runs-on: ubuntu-latest
     steps:
       - name: Check out the code
         uses: actions/checkout@v3
 
-      - name: Print OS info
-        run: echo "Running on operating system: ${{ matrix.os }}"
+      - name: Print a greeting
+        run: echo "Hello, GitHub Actions!"
+
+      - name: Use an environment variable
+        env:
+          MY_VAR: "This is a custom environment variable!"
+        run: echo "The value of MY_VAR is: $MY_VAR"
