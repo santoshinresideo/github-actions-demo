@@ -19,3 +19,4 @@ jobs:
         env:
           MY_VAR: "This is a custom environment variable!"
         run: echo "The value of MY_VAR is: $MY_VAR"
+        shell: bash
