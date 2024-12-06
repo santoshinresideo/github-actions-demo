@@ -15,9 +15,6 @@ jobs:
       - name: Print a greeting
         run: echo "Hello, GitHub Actions!"
 
-      - name: List repository files
-        run: ls -la /
-        
       - name: Use an environment variable
         env:
           MY_VAR: "This is a custom environment variable!"
